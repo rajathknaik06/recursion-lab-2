@@ -1,0 +1,63 @@
+""" You are tasked with developing a program that calculates the nth term of a geometric series. Given the first term (a), the common ratio (r), and the term number (n), the program computes the nth term of the series using a recursive algorithm.
+
+
+
+The nth term of a geometric series (Tn) can be calculated using the formula: Tn=a×r(n−1)
+
+
+
+Example:
+
+Input: a = 2 r = 2, N = 4
+
+Output: 16
+
+Explanation:
+
+a=2 represents the first term of the geometric series.
+
+r=2 is the common ratio.
+
+n=4 denotes the term number.
+
+According to the formula Tn =a×r(n−1):
+
+T4 =2×2 (4−1) =2×23=2×8=16
+
+So, the 4th term of the geometric series with a=2 and r=2 is 16.
+
+Input format :
+The first line of input consists of an integer representing the first term (a) of the geometric series.
+
+The second line of input consists of an integer representing the common ratio (r) of the geometric series.
+
+The third line of input consists of an integer representing the term number (n) to calculate.
+
+Output format :
+The output consists of a single integer containing the nth term of the geometric series.
+
+
+
+"""
+
+
+def geometric_series(a, r, n):
+    # Base case: nth term of a geometric series is a * r^(n-1)
+    if n == 1:
+        return a
+    else:
+        return r * geometric_series(a, r, n - 1)
+
+# Get input from the user
+a = int(input())
+r = int(input())
+n = int(input())
+
+# Calculate the nth term of the geometric series
+nth_term = geometric_series(a, r, n)
+
+# Print the result
+print(nth_term)
+
+
+
